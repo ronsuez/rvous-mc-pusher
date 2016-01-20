@@ -5,12 +5,12 @@ var app = express();
 var server = require("http").createServer(app);
 
 // Configure Express server
-app.configure(function(){
-  app.use(express.bodyParser());
-  app.use(express.errorHandler({
-    dumpExceptions: true,
-    showStack: true
-  }));
+
+// Webhook endpoint
+app.get("/", function(req, res) {
+  console.log('index');
+  // Respond with a success code
+  res.sendStatus(200);
 });
 
 // Webhook endpoint
